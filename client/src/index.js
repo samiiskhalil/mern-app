@@ -4,12 +4,17 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
-
+import {store}  from './app/store';
+import authSlice from './features/auth/authSlice';
+console.log(authSlice)
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<BrowserRouter>
+root.render(
   <React.StrictMode>
+  <Provider store={store}>
+<BrowserRouter>    
     <App />
-  </React.StrictMode>
 </BrowserRouter>
+  </Provider>
+  </React.StrictMode>
 );
 
