@@ -1,9 +1,9 @@
 const express = require('express')
+const {protect}=require('../middleware/authMiddleware.js')
 const {getGoals, postGoals,putGoals, deleteGoals}=require('../controllers/goalsController.js')
+const app=express()
 const router=express.Router()
- router.get('/',getGoals=>{
-    res.send('s')
- })
+ router.get('/',getGoals)
  router.post('/',postGoals)
  router.put('/:id',putGoals)
  router.delete('/:id',deleteGoals)
